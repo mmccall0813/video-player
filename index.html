@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html>
   <body>
+
+    <style>
+      video {
+       position:absolute;
+       left:0px;
+       top:0px;
+       width:100%;
+       height:100%;
+      }
+    </style>
+    
+  <video autoplay="autoplay" loop muted controls="true" id="vid"></video>
     <script>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -15,18 +27,5 @@
       source.type = `video/${get_url_extension(url)}`;
       videoElem.appendChild(source)
     </script>
-    <style>
-      video {
-       position:absolute;
-       left:0px;
-       top:0px;
-       width:100%;
-       height:100%;
-      }
-    </style>
-    
-  <video autoplay="autoplay" loop muted controls="true" id="vid">
-    
-    </video>
     </body>
 </html>
