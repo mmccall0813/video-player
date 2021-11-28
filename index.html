@@ -1,0 +1,8 @@
+<script>
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const videoURL = urlParams.get("videoURL");
+var videoElem = doucment.createElement("VIDEO");
+videoElem.src = videoURL || "https://samplelib.com/lib/preview/mp4/sample-5s.mp4";
+document.body.appendChild(videoElem)
+</script>
