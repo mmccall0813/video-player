@@ -8,6 +8,8 @@
     var videoElem = document.createElement("VIDEO");
     videoElem.src = videoURL || "https://samplelib.com/lib/preview/mp4/sample-5s.mp4";
     videoElem.setAttribute("controls","controls")
+    videoElem.setAttribute("playsinline","playsinline")
+    videoElem.setAttribute("controls","true")
     document.body.appendChild(videoElem)
     </script>
     <style>
