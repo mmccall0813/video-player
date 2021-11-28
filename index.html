@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <body>
-
     <style>
       video {
        position:absolute;
@@ -11,13 +10,13 @@
        height:100%;
       }
     </style>
-    
-  <video autoplay="autoplay" loop muted controls="true" id="vid"></video>
     <script>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const videoURL = urlParams.get("videoURL");
-    var videoElem = document.getElementById("vid");
+    var videoElem = document.createElement("video");
+    videoElem.setAttribute("controls","controls")
+    videoElem.setAttribute("loop","loop")
     const url = videoURL || "https://samplelib.com/lib/preview/mp4/sample-5s.mp4";
     const source = document.createElement("source")
     function get_url_extension( vid ) {
@@ -25,7 +24,8 @@
     }
       source.src = url;
       source.type = `video/${get_url_extension(url)}`;
-      videoElem.appendChild(source)
+      videoElem.appendChild(source);
+      document.body.appendChild(videoElem
     </script>
     </body>
 </html>
