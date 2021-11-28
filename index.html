@@ -5,8 +5,15 @@
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const videoURL = urlParams.get("videoURL");
-    var videoElem = document.getElementById("vid")
-    //videoElem.src = videoURL || "https://samplelib.com/lib/preview/mp4/sample-5s.mp4";
+    var videoElem = document.getElementById("vid");
+    const url = videoURL || "https://samplelib.com/lib/preview/mp4/sample-5s.mp4";
+    const source = document.createElement("source")
+    function get_url_extension( vid ) {
+    return vid.split(/[#?]/)[0].split('.').pop().trim(); // thanks stackoverflow
+    }
+      source.src = url;
+      source.type = `video/${get_url_extension(url)}`;
+      videoElem.appendChild(source)
     </script>
     <style>
       video {
@@ -19,5 +26,7 @@
     </style>
     
 <body>
-  <video src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" autoplay="autoplay" loop muted controls="true" id="vid"></video>
+  <videoautoplay="autoplay" loop muted controls="true" id="vid">
+    
+    </video>
 <html>
