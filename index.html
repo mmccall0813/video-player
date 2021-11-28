@@ -5,11 +5,8 @@
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const videoURL = urlParams.get("videoURL");
-    var videoElem = document.createElement("VIDEO");
-    videoElem.src = videoURL || "https://samplelib.com/lib/preview/mp4/sample-5s.mp4";
-    videoElem.setAttribute("playsinline","playsinline")
-    videoElem.setAttribute("controls","true")
-    document.body.appendChild(videoElem)
+    var videoElem = document.getElementById("vid")
+    //videoElem.src = videoURL || "https://samplelib.com/lib/preview/mp4/sample-5s.mp4";
     </script>
     <style>
       video {
@@ -22,5 +19,5 @@
     </style>
     
 <body>
-  
+  <video src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" playsinline controls="true" id="vid"></video>
 <html>
