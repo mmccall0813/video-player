@@ -17,6 +17,7 @@
     var videoElem = document.createElement("video");
     videoElem.setAttribute("controls","controls")
     videoElem.setAttribute("loop","loop")
+    videoElem.setAttribute("playsinline","playsinline")
     const url = videoURL || "https://samplelib.com/lib/preview/mp4/sample-5s.mp4";
     const source = document.createElement("source")
     function get_url_extension( vid ) {
