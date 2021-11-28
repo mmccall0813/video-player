@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
   <body>
-    
-  </body>
-  <head>
     <script>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const videoURL = urlParams.get("videoURL");
     var videoElem = document.createElement("VIDEO");
     videoElem.src = videoURL || "https://samplelib.com/lib/preview/mp4/sample-5s.mp4";
+    videoElem.setAttribute("controls","controls")
     document.body.appendChild(videoElem)
     </script>
-   <head>
+    <style>
+      video {
+       position:absolute;
+       left:0px;
+       top:0px;
+       width:100%;
+       height:100%;
+      }
+    </style>
+    
+<body>
   
 <html>
